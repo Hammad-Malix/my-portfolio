@@ -26,7 +26,7 @@ export const portfolioData = {
       "My journey started with a fascination for the intersection of intuitive UI design and intelligent software. Today, I bring that same curiosity to every project—whether it's crafting pixel-perfect interfaces, architecting secure databases, or training computer vision models.",
       "When I'm not coding, you'll find me contributing to community initiatives, exploring AI-assisted developer workflows, or refining user experiences.",
     ],
-    profileImage: "images/profile.jpg",
+    profileImage: "images/mypic.jpeg",
     footerTagline:
       "Full-stack developer and AI engineer crafting exceptional digital experiences.",
     email: "hammad.iqbal.dev@gmail.com",
@@ -45,7 +45,7 @@ export const portfolioData = {
     { name: "Python", short: "PY" },
     { name: "Node.js", short: "JS" },
     { name: "MySQL", short: "DB" },
-    { name: "PyTorch", short: "AI" },
+    { name: "pandas", short: "AI" },
   ],
 
   heroStats: [
@@ -58,7 +58,7 @@ export const portfolioData = {
   aboutStats: [
     { value: "3+", label: "Years Experience" },
     { value: "15+", label: "Projects Completed" },
-    { value: "10+", label: "Happy Collaborators" },
+    { value: "1+", label: "Happy Collaborators" },
   ],
 
   expertise: [
@@ -70,12 +70,12 @@ export const portfolioData = {
     {
       title: "Backend & Data",
       iconName: "Server",
-      skills: ["Node.js", "Python", "MySQL", "REST APIs", "RBAC Security"],
+      skills: ["Node.js", "Python", "MySQL", "REST APIs"],
     },
     {
       title: "AI & Tools",
       iconName: "Cpu",
-      skills: ["PyTorch", "Grad-CAM & SHAP", "Playwright", "Git & GitHub", "UI/UX Design"],
+      skills: ["numpy", "Grad-CAM & SHAP", "pandas", "Git & GitHub", "UI/UX Design"],
     },
   ],
 
@@ -86,30 +86,30 @@ export const portfolioData = {
       title: "OcuLens — AI Eye Disease Screening",
       description:
         "An AI-powered retinal screening platform detecting Diabetic Retinopathy and Glaucoma with Grad-CAM and SHAP explainability heatmaps.",
-      image: "images/projects/oculens-preview.png",
+      image: "projects/oci.png",
       tags: ["React", "Python", "PyTorch", "Grad-CAM"],
       githubUrl: "https://github.com/yourusername/oculens",
       liveUrl: "https://yourusername.github.io/oculens",
     },
     {
       id: "secure-portal",
-      category: "Web Application",
-      title: "Multi-Role Secure Portal with Audit Logs",
+      category: "Education Management System",
+      title: "ABM Result Management System",
       description:
-        "An enterprise-grade role-based access control web portal featuring granular permission tiers and immutable activity audit trails backed by MySQL.",
-      image: "images/projects/secure-portal.png",
-      tags: ["React", "Standard CSS", "Node.js", "MySQL"],
+        "An academic dashboard for managing students, courses, results, attendance, and performance reports.",
+      image: "projects/rms.png",
+      tags: ["Dashboard", "Academic Records", "Analytics"],
       githubUrl: "https://github.com/yourusername/secure-portal",
       liveUrl: "https://yourusername.github.io/secure-portal",
     },
     {
       id: "ai-ux-auditor",
-      category: "AI Automation",
-      title: "Automated AI UI/UX Auditor",
+      category: "E-commerce",
+      title: "Ultimate Wear — Smartwatch Storefront",
       description:
-        "A headless browser pipeline built with Python and Playwright that captures multi-viewport screenshots and evaluates visual hierarchy via Vision LLMs.",
-      image: "images/projects/ui-auditor.png",
-      tags: ["Python", "Playwright", "Vision LLMs", "JSON"],
+        "A minimalist smartwatch storefront with product details, selectable variants, and feature highlights.",
+      image: "projects/watch.png",
+      tags: ["E-commerce", "Product UI", "Responsive Design"],
       githubUrl: "https://github.com/yourusername/ai-ux-auditor",
       liveUrl: "",
     },
@@ -119,7 +119,7 @@ export const portfolioData = {
       title: "Student Aid & Outreach Portal",
       description:
         "A transparent campaign tracking and student support coordination platform built to streamline peer-contribution initiatives across university classes.",
-      image: "images/projects/financial-aid.png",
+      image: "",
       tags: ["React", "CSS Grid", "JavaScript", "GitHub Pages"],
       githubUrl: "https://github.com/yourusername/aid-portal",
       liveUrl: "https://yourusername.github.io/aid-portal",

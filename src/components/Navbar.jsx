@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
+import "./Navbar.css";
 
 export default function Navbar({ brandName, theme, toggleTheme }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -41,7 +42,7 @@ export default function Navbar({ brandName, theme, toggleTheme }) {
             aria-label="Toggle color theme"
             title="Toggle theme"
           >
-            {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
+            {theme === "light" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
 
           <a href="#contact" className="btn btn--primary btn--sm navbar__cta">
@@ -53,6 +54,8 @@ export default function Navbar({ brandName, theme, toggleTheme }) {
             className="theme-btn navbar__hamburger"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
           >
             {mobileOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -60,7 +63,7 @@ export default function Navbar({ brandName, theme, toggleTheme }) {
       </div>
 
       {mobileOpen && (
-        <div className="navbar__mobile">
+        <nav className="navbar__mobile" id="mobile-navigation" aria-label="Mobile navigation">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -78,7 +81,7 @@ export default function Navbar({ brandName, theme, toggleTheme }) {
           >
             Hire Me
           </a>
-        </div>
+        </nav>
       )}
     </header>
   );

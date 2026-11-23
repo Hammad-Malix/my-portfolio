@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -13,13 +13,13 @@ import { portfolioData } from "./data/portfolioData";
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem("portfolio-theme");
-    return saved === "dark" || saved === "light" ? saved : "light";
+    const saved = localStorage.getItem("portfolio-theme-v2");
+    return saved === "dark" || saved === "light" ? saved : "dark";
   });
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("portfolio-theme", theme);
+    localStorage.setItem("portfolio-theme-v2", theme);
   }, [theme]);
 
   const toggleTheme = () => {
@@ -37,7 +37,6 @@ export default function App() {
         <Hero
           personal={portfolioData.personal}
           techBadges={portfolioData.heroTechBadges}
-          stats={portfolioData.heroStats}
         />
         <About
           personal={portfolioData.personal}
