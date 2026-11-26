@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Send,
   Mail,
@@ -24,10 +24,48 @@ export default function Contact({ personal }) {
     type: null,
     text: "",
   });
+  const [copyMessage, setCopyMessage] = useState("");
+  const copyMessageTimeout = useRef(null);
+
+  useEffect(
+    () => () => {
+      if (copyMessageTimeout.current !== null) {
+        window.clearTimeout(copyMessageTimeout.current);
+      }
+    },
+    [],
+  );
+
+  const showCopyMessage = (message) => {
+    setCopyMessage(message);
+    if (copyMessageTimeout.current !== null) {
+      window.clearTimeout(copyMessageTimeout.current);
+    }
+    copyMessageTimeout.current = window.setTimeout(() => {
+      setCopyMessage("");
+      copyMessageTimeout.current = null;
+    }, 2000);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleCopyEmail = async () => {
+    try {
+      if (!navigator.clipboard?.writeText) {
+        showCopyMessage(
+          "Clipboard access is unavailable. Please copy the email manually.",
+        );
+        return;
+      }
+
+      await navigator.clipboard.writeText(personal.email);
+      showCopyMessage("Email copied");
+    } catch {
+      showCopyMessage("Could not copy the email. Please copy it manually.");
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -86,7 +124,7 @@ export default function Contact({ personal }) {
   };
 
   return (
-    <section id="contact" className="section section--tinted">
+    <section id="contact" className="section section--tinted contact-section">
       <div className="container container--form">
         <div className="section-header">
           <h2 className="section-title">Let’s Work Together</h2>
@@ -196,60 +234,71 @@ export default function Contact({ personal }) {
         </form>
 
         <div className="contact-direct">
-          <a href={`mailto:${personal.email}`} className="contact-direct__email">
-            <Mail size={15} />
-            <span>{personal.email}</span>
-          </a>
+          <div className="contact-direct__pill">
+            <button
+              type="button"
+              onClick={handleCopyEmail}
+              className="contact-direct__email"
+              aria-label={`Copy email address ${personal.email}`}
+              title="Click to copy email"
+            >
+              <Mail size={20} />
+              <span>{personal.email}</span>
+            </button>
+            <span className="contact-direct__copy-status" role="status">
+              {copyMessage}
+            </span>
 
-          <div className="social-square-row">
-            {personal.socials.github && (
-              <a
-                href={personal.socials.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-square"
-                aria-label="GitHub"
-                title="GitHub"
-              >
-                <Code2 size={16} />
-              </a>
-            )}
-            {personal.socials.twitter && (
-              <a
-                href={personal.socials.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-square"
-                aria-label="Twitter"
-                title="Twitter / X"
-              >
-                <AtSign size={16} />
-              </a>
-            )}
-            {personal.socials.linkedin && (
-              <a
-                href={personal.socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-square"
-                aria-label="LinkedIn"
-                title="LinkedIn"
-              >
-                <Briefcase size={16} />
-              </a>
-            )}
-            {personal.socials.website && (
-              <a
-                href={personal.socials.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-square"
-                aria-label="Website"
-                title="Portfolio Website"
-              >
-                <Globe size={16} />
-              </a>
-            )}
+            <div className="social-square-row">
+              {personal.socials.github && (
+                <a
+                  href={personal.socials.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-square"
+                  aria-label="GitHub"
+                  title="GitHub"
+                >
+                  <Code2 size={18} />
+                </a>
+              )}
+              {personal.socials.twitter && (
+                <a
+                  href={personal.socials.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-square"
+                  aria-label="Twitter"
+                  title="Twitter / X"
+                >
+                  <AtSign size={18} />
+                </a>
+              )}
+              {personal.socials.linkedin && (
+                <a
+                  href={personal.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-square"
+                  aria-label="LinkedIn"
+                  title="LinkedIn"
+                >
+                  <Briefcase size={18} />
+                </a>
+              )}
+              {personal.socials.website && (
+                <a
+                  href={personal.socials.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-square"
+                  aria-label="Website"
+                  title="Portfolio Website"
+                >
+                  <Globe size={18} />
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>

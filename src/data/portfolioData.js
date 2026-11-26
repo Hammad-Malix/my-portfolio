@@ -6,7 +6,7 @@
  * career timeline, testimonials, and FAQs.
  *
  * HOW TO ADD A NEW PROJECT IN 30 SECONDS:
- * 1. Drop your screenshot into: public/images/projects/your-image.png
+ * 1. Drop your screenshot into: public/projects/your-image.png
  * 2. Add a new object to the `projects` array below (without a leading slash).
  * ============================================================================
  */
@@ -88,8 +88,8 @@ export const portfolioData = {
         "An AI-powered retinal screening platform detecting Diabetic Retinopathy and Glaucoma with Grad-CAM and SHAP explainability heatmaps.",
       image: "projects/oci.png",
       tags: ["React", "Python", "PyTorch", "Grad-CAM"],
-      githubUrl: "https://github.com/yourusername/oculens",
-      liveUrl: "https://yourusername.github.io/oculens",
+      githubUrl: "https://github.com/Hammad-Malix/OCI",
+      liveUrl: "https://hammad-malix.github.io/OCI/",
     },
     {
       id: "secure-portal",
@@ -99,8 +99,18 @@ export const portfolioData = {
         "An academic dashboard for managing students, courses, results, attendance, and performance reports.",
       image: "projects/rms.png",
       tags: ["Dashboard", "Academic Records", "Analytics"],
-      githubUrl: "https://github.com/yourusername/secure-portal",
-      liveUrl: "https://yourusername.github.io/secure-portal",
+      githubUrl: "https://github.com/Hammad-Malix/RMS",
+      liveUrl: "https://github.com/Hammad-Malix/RMS",
+    },
+    {
+      id: "b2b-wholesale-portal",
+      category: "B2B Wholesale",
+      title: "B2B Wholesale Portal",
+      description: "A client‑side React/Vite demo that showcases tiered wholesale pricing, account‑specific catalogs, real‑time order summary, PDF invoice generation, reorder/favorites, and white‑label theming. All functionality runs offline and can be deployed as a static site on Vercel.",
+      image: "projects/apexsupply.png",
+      tags: ["React","Tiered Pricing","PDF Invoice","White‑Label"],
+      githubUrl: "https://github.com/Hammad-Malix/B2BWholesalePortal",
+      liveUrl: "https://b2-b-wholesale-portal.vercel.app/",
     },
     {
       id: "ai-ux-auditor",
@@ -110,7 +120,29 @@ export const portfolioData = {
         "A minimalist smartwatch storefront with product details, selectable variants, and feature highlights.",
       image: "projects/watch.png",
       tags: ["E-commerce", "Product UI", "Responsive Design"],
-      githubUrl: "https://github.com/yourusername/ai-ux-auditor",
+      githubUrl: "https://github.com/Hammad-Malix/watch-store",
+      liveUrl: "https://hammad-malix.github.io/watch-store/",
+    },
+    {
+      id: "swap-space-simulator",
+      category: "Operating Systems",
+      title: "Swap Space Simulator",
+      description:
+        "An interactive operating-systems project for configuring memory and swap space, stepping through page references, and viewing simulation statistics.",
+      image: "projects/swapspacesimulator.png",
+      tags: ["Operating Systems", "Memory Management", "Simulation"],
+      githubUrl: "https://github.com/Hammad-Malix/swapSpaceSimulator",
+      liveUrl: "",
+    },
+    {
+      id: "secure-member-portal",
+      category: "Security Portal",
+      title: "Secure Portal",
+      description:
+        "A secure member-access portal interface featuring sign-in, account creation, and role-based demo access.",
+      image: "projects/securePortal.png",
+      tags: ["Security", "Authentication", "Portal"],
+      githubUrl: "https://github.com/Hammad-Malix/securePortal",
       liveUrl: "",
     },
     {
@@ -123,6 +155,28 @@ export const portfolioData = {
       tags: ["React", "CSS Grid", "JavaScript", "GitHub Pages"],
       githubUrl: "https://github.com/yourusername/aid-portal",
       liveUrl: "https://yourusername.github.io/aid-portal",
+    },
+    {
+      id: "ai-forgery-detection",
+      category: "AI / ML Application",
+      title: "AI Forgery Detection System",
+      description:
+        "An AI-assisted image-authentication interface for analyzing uploaded images and presenting forgery confidence results.",
+      image: "projects/forgerydetectionai.png",
+      tags: ["AI", "Image Analysis", "Forgery Detection"],
+      githubUrl: "",
+      liveUrl: "",
+    },
+    {
+      id: "eventhub",
+      category: "Event Management",
+      title: "EventHub",
+      description:
+        "An event-management interface for discovering events, registering, and accessing attendee and administrator pages.",
+      image: "projects/eventmanagmentsystem.png",
+      tags: ["Events", "Registration", "Management System"],
+      githubUrl: "https://github.com/Hammad-Malix/eventManagmentSystem",
+      liveUrl: "https://github.com/Hammad-Malix/eventManagmentSystem",
     },
   ],
 

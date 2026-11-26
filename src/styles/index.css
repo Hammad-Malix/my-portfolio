@@ -133,6 +133,10 @@ textarea {
   background-color: var(--bg-tinted);
 }
 
+.contact-section {
+  padding-bottom: 0.75rem;
+}
+
 /* ==========================================================================
    3. SHARED SECTION HEADERS & BUTTONS
    ========================================================================== */
@@ -568,6 +572,18 @@ textarea {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+}
+
+.projects-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.projects-toggle {
+  min-width: 220px;
+  border-radius: 999px;
+  font-weight: 600;
 }
 
 .project-card {
@@ -1026,35 +1042,81 @@ textarea {
 }
 
 .contact-direct {
-  margin-top: 2.5rem;
-  padding-top: 2rem;
+  max-width: 640px;
+  margin: 1.25rem auto 0;
+  padding-top: 2.5rem;
   border-top: 1px solid var(--border-light);
-  text-align: center;
+}
+
+.contact-direct__pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0.6rem 0.5rem 1.25rem;
+  border: 1px solid rgba(139, 92, 246, 0.8);
+  border-radius: 999px;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.22);
 }
 
 .contact-direct__email {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  font-size: 0.86rem;
-  color: var(--text-muted);
-  margin-bottom: 1.25rem;
+  gap: 0.65rem;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-heading);
+  font-size: 1.15rem;
+  font-family: inherit;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 .contact-direct__email:hover {
   color: var(--purple-main);
 }
 
+.contact-direct__email:focus-visible {
+  outline: 2px solid var(--purple-main);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.contact-direct__copy-status {
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  z-index: 1;
+  max-width: min(90vw, 320px);
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-card);
+  color: var(--text-heading);
+  font-size: 0.75rem;
+  text-align: center;
+  transform: translateX(-50%);
+  white-space: normal;
+}
+
+.contact-direct__copy-status:empty {
+  display: none;
+}
+
 .social-square-row {
   display: flex;
-  justify-content: center;
+  flex-shrink: 0;
   gap: 0.65rem;
 }
 
 .social-square {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
   background-color: var(--bg-pill-gray);
   color: var(--text-body);
   display: inline-flex;
@@ -1069,47 +1131,15 @@ textarea {
 }
 
 .footer {
-  background-color: var(--bg-tinted);
-  border-top: 1px solid var(--border-light);
-  padding: 3rem 0;
-  text-align: center;
+  overflow: hidden;
 }
 
-.footer__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.85rem;
-}
-
-.footer__brand {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1rem;
-  color: var(--text-heading);
-}
-
-.footer__tagline {
-  max-width: 360px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.footer__legal-links {
-  display: flex;
-  gap: 1.25rem;
-  font-size: 0.76rem;
-  color: var(--text-muted);
-  margin-top: 0.25rem;
-}
-
-.footer__legal-links a:hover {
-  color: var(--text-heading);
-}
-
-.footer__copyright {
-  font-size: 0.76rem;
-  color: var(--text-muted);
+.footer__image {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .spin {
@@ -1183,5 +1213,29 @@ textarea {
 
   .timeline__row--left .timeline__point {
     flex-direction: row;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-direct {
+    padding-top: 1rem;
+  }
+
+  .contact-direct__pill {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.75rem;
+    border-radius: 1.5rem;
+  }
+
+  .contact-direct__email {
+    justify-content: center;
+    font-size: 0.95rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .social-square-row {
+    justify-content: center;
   }
 }

@@ -1,8 +1,12 @@
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight, FileText, Table2 } from "lucide-react";
 import BackgroundMesh from "./BackgroundMesh";
 import "./Hero.css";
 
 function TechIcon({ name }) {
+  if (name === "pandas") {
+    return <Table2 aria-hidden="true" />;
+  }
+
   if (name === "React") {
     return (
       <svg viewBox="0 0 32 32" aria-hidden="true">

@@ -49,7 +49,7 @@ export default function App() {
         <FAQ faqs={portfolioData.faqs} />
         <Contact personal={portfolioData.personal} />
       </main>
-      <Footer personal={portfolioData.personal} />
+      <Footer theme={theme} />
     </div>
   );
 }
